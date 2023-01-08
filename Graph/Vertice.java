@@ -22,13 +22,14 @@ public class Vertice {
         String output = "";
         output += "Name: " + getName() + ", Edges: [";
         ListIterator<Edge> listIterator = edges.listIterator();
+
         if(listIterator.hasNext()) {
             while(listIterator.hasNext()) {
                 Edge currentEdge = listIterator.next();
                 output += currentEdge + ", ";
-            }
+            } 
             output = output.substring(0, output.length() - 2);
-        } 
+        }
 
         output += "]";
 
@@ -37,9 +38,8 @@ public class Vertice {
 
     @Override
     public String toString() {
-return getName();
+        return getName();
     }
-    
 
     public void addEdge(Vertice otherVertice) {
         Edge newEdge = new Edge(this, otherVertice);

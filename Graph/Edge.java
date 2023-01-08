@@ -11,14 +11,11 @@ public class Edge{
     }
 
     public boolean equals(Object obj) {
-
         if(obj instanceof Edge) {
             Edge otherEdge = (Edge) obj;
             return (first.equals( otherEdge.first ) && second.equals(otherEdge.second)) || (second.equals( otherEdge.first ) && first.equals(otherEdge.second));
-        } else {
-            return false;
         }
-        
+        return false;
     }
 
     public Vertice getOtherVertice(Vertice vertice) {
@@ -29,7 +26,7 @@ public class Edge{
         }
     }
 
-
+    @Override
     public int hashCode() {
         return first.hashCode() * 29 + second.hashCode() * 13;
     }
