@@ -23,12 +23,14 @@ public class Vertice {
         output += "Name: " + getName() + ", Edges: [";
         ListIterator<Edge> listIterator = edges.listIterator();
 
-        while(listIterator.hasNext()) {
-            Edge currentEdge = listIterator.next();
-            output += currentEdge + ", ";
+        if(listIterator.hasNext()) {
+            while(listIterator.hasNext()) {
+                Edge currentEdge = listIterator.next();
+                output += currentEdge + ", ";
+            } 
+            output = output.substring(0, output.length() - 2);
         }
 
-        output = output.substring(0, output.length() - 2);
         output += "]";
 
         return output;
